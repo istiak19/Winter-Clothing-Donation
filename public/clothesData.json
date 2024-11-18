@@ -1,0 +1,146 @@
+[
+    {
+        "id": 1,
+        "title": "Warm Clothes for Rural Children",
+        "image": "https://i.ibb.co.com/k0Trf5T/pic1.webp",
+        "description": "Providing warm clothes to underprivileged children in rural areas of Sylhet.",
+        "status": "Ongoing",
+        "contactInfo": "contact@example.com",
+        "division": "Sylhet"
+    },
+    {
+        "id": 2,
+        "title": "Winter Support for Elderly People",
+        "image": "https://i.ibb.co.com/N2htn0z/pic-33.webp",
+        "description": "Collecting warm clothes for elderly individuals in low-income areas of Dhaka.",
+        "status": "Completed",
+        "contactInfo": "help@example.com",
+        "division": "Dhaka"
+    },
+    {
+        "id": 3,
+        "title": "Warmth for Northern Communities",
+        "image": "https://i.ibb.co.com/CVLGV7c/pic-2.jpg",
+        "description": "A campaign to deliver blankets and warm clothes to cold-affected areas of Rangpur.",
+        "status": "Ongoing",
+        "contactInfo": "support@example.com",
+        "division": "Rangpur"
+    },
+    {
+        "id": 4,
+        "title": "Warm Clothes for the Homeless",
+        "image": "https://i.ibb.co.com/LJBkmJj/pic-3.jpg",
+        "description": "Helping homeless people in Chattogram with necessary winter clothing.",
+        "status": "Ongoing",
+        "contactInfo": "info@example.com",
+        "division": "Chattogram"
+    },
+    {
+        "id": 5,
+        "title": "Winter Relief in the Hills",
+        "image": "https://i.ibb.co.com/8zdRzRX/pic-6.jpg",
+        "description": "Bringing winter aid to indigenous communities in Bandarban.",
+        "status": "Planned",
+        "contactInfo": "volunteer@example.com",
+        "division": "Chattogram"
+    },
+    {
+        "id": 6,
+        "title": "Cold Relief for Coastal Areas",
+        "image": "https://i.ibb.co.com/x6Pq3Lf/pic-4.webp",
+        "description": "Providing warm clothes and blankets to coastal regions of Barisal.",
+        "status": "Ongoing",
+        "contactInfo": "connect@example.com",
+        "division": "Barisal"
+    },
+    {
+        "id": 7,
+        "title": "Winter Care for Street Dwellers",
+        "image": "https://i.ibb.co.com/gWLtSHV/pic-7.jpg",
+        "description": "Distributing jackets and blankets to street dwellers in Rajshahi.",
+        "status": "Ongoing",
+        "contactInfo": "rajshahi@example.com",
+        "division": "Rajshahi"
+    },
+    {
+        "id": 8,
+        "title": "Blankets for Urban Poor",
+        "image": "https://i.ibb.co.com/PCZNrYh/pic-8.jpg",
+        "description": "Supporting slum dwellers in Dhaka with warm blankets.",
+        "status": "Completed",
+        "contactInfo": "urban@example.com",
+        "division": "Dhaka"
+    },
+    {
+        "id": 9,
+        "title": "Winter Clothing for Tea Garden Workers",
+        "image": "https://i.ibb.co.com/x2HcSmd/pic-9.jpg",
+        "description": "Helping tea garden workers in Moulvibazar stay warm during winter.",
+        "status": "Ongoing",
+        "contactInfo": "tea@example.com",
+        "division": "Sylhet"
+    },
+    {
+        "id": 10,
+        "title": "Warm Hearts for the Homeless",
+        "image": "https://i.ibb.co.com/0VhvRv3/pic-10.jpg",
+        "description": "Collecting sweaters and jackets for the homeless in Khulna.",
+        "status": "Ongoing",
+        "contactInfo": "khulna@example.com",
+        "division": "Khulna"
+    },
+    {
+        "id": 11,
+        "title": "Winter Aid for Low-Income Families",
+        "image": "https://i.ibb.co.com/tZ09CZK/pic-11.jpg",
+        "description": "Supporting low-income families in Rajbari with winter essentials.",
+        "status": "Planned",
+        "contactInfo": "aid@example.com",
+        "division": "Dhaka"
+    },
+    {
+        "id": 12,
+        "title": "Warm Blankets for Orphans",
+        "image": "https://i.ibb.co.com/4px2cVz/pic-12.jpg",
+        "description": "Providing warm blankets to orphans in Noakhali.",
+        "status": "Ongoing",
+        "contactInfo": "orphan@example.com",
+        "division": "Chattogram"
+    },
+    {
+        "id": 13,
+        "title": "Winter Essentials for Farmers",
+        "image": "https://i.ibb.co.com/J3qP68g/pic-13.jpg",
+        "description": "Helping farmers in cold-affected areas of Jessore with winter clothing.",
+        "status": "Ongoing",
+        "contactInfo": "farmers@example.com",
+        "division": "Khulna"
+    },
+    {
+        "id": 14,
+        "title": "Warm Clothes for Schoolchildren",
+        "image": "https://i.ibb.co.com/Vx5V23G/pic-14.jpg",
+        "description": "Supporting schoolchildren in rural Sunamganj with warm jackets.",
+        "status": "Ongoing",
+        "contactInfo": "school@example.com",
+        "division": "Sylhet"
+    },
+    {
+        "id": 15,
+        "title": "Winter Support for Border Areas",
+        "image": "https://i.ibb.co.com/Rvcw0cX/pic-15.jpg",
+        "description": "Providing blankets and clothes to border communities in Kurigram.",
+        "status": "Completed",
+        "contactInfo": "border@example.com",
+        "division": "Rangpur"
+    },
+    {
+        "id": 16,
+        "title": "Warmth for Coastal Fishermen",
+        "image": "https://i.ibb.co.com/dbjDjhj/pic3.jpg",
+        "description": "Delivering warm clothing to fishermen in Patuakhali.",
+        "status": "Ongoing",
+        "contactInfo": "fishermen@example.com",
+        "division": "Barisal"
+    }
+]
