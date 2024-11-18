@@ -7,8 +7,10 @@ const Footer = () => {
                     <img className='w-[150px] h-[100px]' src={footerPic} alt="" />
                 </nav>
                 <nav>
-                    <h6 className="text-2xl font-semibold text-white">Stay Connected</h6>
+                    <h6 className="text-2xl font-semibold text-white">Contact Us</h6>
                     <p className='text-gray-200'>265/2 WEST SHEWRAPARA, Mirpur TSO, Mirpur, Dhaka 1216</p>
+                    <p className='text-gray-200'>Tel:(880) (2) 48310188 / 48310189</p>
+                    <p className='text-gray-200'>Email: info@wcd.org</p>
                 </nav>
                 <nav>
                     <h6 className="text-2xl font-semibold text-white">Social</h6>
@@ -50,7 +52,7 @@ const Footer = () => {
                 </nav>
             </footer>
             <aside className='text-center'>
-                <p className='text-white mt-5'>Copyright © {new Date().getFullYear()} - All right reserved by WINTER CLOTHES DONATION</p>
+                <p className='mt-10 text-gray-200'>Copyright © {new Date().getFullYear()} - All right reserved by WINTER CLOTHES DONATION</p>
             </aside>
         </footer>
     );
