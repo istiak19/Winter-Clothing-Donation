@@ -4,6 +4,8 @@ import ErrorPage from "../Errors/ErrorPage";
 import Home from "../Components/Home";
 import DonationCampaigns from "../Components/DonationCampaigns";
 import DetailsPage from "../pages/DetailsPage";
+import Login from "../Components/Login";
+import Register from "../Components/Register";
 
 const routers = createBrowserRouter([
    {
@@ -29,6 +31,14 @@ const routers = createBrowserRouter([
                return clothe
             },
             element: <DetailsPage></DetailsPage>
+         },
+         {
+            path:'/login',
+            element:<Login></Login>
+         },
+         {
+            path:'/register',
+            element:<Register></Register>
          }
       ]
    }

@@ -1,8 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import logoPic from '../assets/logo3.png'
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
-
+    const { name } = useContext(AuthContext)
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/campaigns'>Donation Campaigns</NavLink></li>
@@ -44,7 +46,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn bg-[#1CABE2] border-2 text-white font-semibold">Login</a>
+                <Link to='/login' className="btn bg-[#1CABE2] border-2 text-white font-semibold">Login</Link>
             </div>
         </div>
     );
