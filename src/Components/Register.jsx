@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Register = () => {
 
     const [showPassword, setShowPassword] = useState(true)
+    const { signUpUser, signUpGoogle, updateProfileUser } = useContext(AuthContext)
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -14,10 +16,24 @@ const Register = () => {
         const email = form.get('email')
         const password = form.get('password')
         console.log(name, photo, email, password)
+        signUpUser(email, password)
+            .then((result) => {
+                console.log(result.user)
+                updateProfileUser({ displayName: name, photoURL: photo })
+            })
+            .catch((error) => {
+                console.log(error.message)
+            })
     }
 
     const handleGoogle = () => {
-        console.log('google')
+        signUpGoogle()
+            .then((result) => {
+                console.log(result.user)
+            })
+            .catch((error) => {
+                console.log(error.message)
+            })
     }
 
     return (
@@ -51,9 +67,6 @@ const Register = () => {
                         </label>
                         <input type={showPassword ? 'password' : 'text'} name="password" placeholder="Password" className="input input-bordered" required />
                         <button onClick={() => setShowPassword(!showPassword)} className="absolute top-14 right-3">{showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}</button>
-                        <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                        </label>
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn bg-[#F59E0B] text-white font-bold">Register</button>

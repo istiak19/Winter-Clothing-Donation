@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
 
+    const { signInUser, signUpGoogle } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(true)
 
     const handleLogin = (e) => {
@@ -12,10 +14,23 @@ const Login = () => {
         const email = form.get('email')
         const password = form.get('password')
         console.log(email, password)
+        signInUser(email, password)
+            .then((result) => {
+                console.log(result.user)
+            })
+            .catch((error) => {
+                console.log(error.message)
+            })
     }
 
     const handleGoogle = () => {
-        console.log('google')
+        signUpGoogle()
+            .then((result) => {
+                console.log(result.user)
+            })
+            .catch((error) => {
+                console.log(error.message)
+            })
     }
 
     return (
@@ -36,7 +51,7 @@ const Login = () => {
                             <span className="label-text">Password</span>
                         </label>
                         <input type={showPassword ? 'password' : 'text'} name="password" placeholder="Password" className="input input-bordered" required />
-                        <button onClick={() => setShowPassword(!showPassword)} className="absolute top-14 right-3">{showPassword?<FaEye></FaEye>:<FaEyeSlash></FaEyeSlash>}</button>
+                        <button onClick={() => setShowPassword(!showPassword)} className="absolute top-14 right-3">{showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}</button>
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
