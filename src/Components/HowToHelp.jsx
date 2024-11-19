@@ -12,7 +12,7 @@ const HowToHelp = () => {
                 <meta charSet="utf-8" />
                 <title>HowToHelp - Winter Clothes Donation</title>
             </Helmet>
-            <h2 className="text-3xl font-bold text-center text-[#1CABE2] mb-8">How to Help</h2>
+            <h2 className="text-3xl font-bold text-center text-[#F59E0B] mb-8">How to Help</h2>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                 <div className="card shadow-md p-6 text-center border border-[#1CABE2]">
                     <FaTshirt className="text-4xl text-[#1CABE2] mx-auto mb-4" />
@@ -45,7 +45,7 @@ const HowToHelp = () => {
             </div>
 
             <div className="mt-8 text-center">
-                <button onClick={() => navigate('/campaigns')} className="btn bg-[#1CABE2] text-white mx-2">Donate Now</button>
+                <button onClick={() => navigate('/campaigns')} className="btn bg-[#F59E0B] text-white mx-2">Donate Now</button>
             </div>
         </div>
     );

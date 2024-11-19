@@ -19,4 +19,4 @@
 * React Toast library.
 * React Helmet library.
 * React icon library.
-* Animate On Scroll Library
+* Animate On Scroll Library (AOS).

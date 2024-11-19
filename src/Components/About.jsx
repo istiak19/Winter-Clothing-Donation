@@ -9,7 +9,7 @@ const About = () => {
 
     return (
         <div className="w-11/12 mx-auto text-center px-4 py-12">
-            <h2 className="text-3xl font-semibold text-[#1CABE2] mb-4" data-aos="fade-up">Our Mission</h2>
+            <h2 className="text-3xl font-semibold text-[#F59E0B] mb-4" data-aos="fade-up">Our Mission</h2>
             <p className="text-lg text-gray-600 mb-6" data-aos="fade-up">
                 At Winter Donation, our mission is simple: to help vulnerable communities in Bangladesh
                 stay warm during the cold winter months. By connecting generous donors with volunteers,

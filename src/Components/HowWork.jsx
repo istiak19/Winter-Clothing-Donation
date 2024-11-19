@@ -9,7 +9,7 @@ const HowWork = () => {
 
     return (
         <div className="w-11/12 mx-auto text-center px-4">
-            <h2 className="text-3xl font-semibold text-[#1CABE2] mb-4" data-aos="fade-up">How It Works</h2>
+            <h2 className="text-3xl font-semibold text-[#F59E0B] mb-4" data-aos="fade-up">How It Works</h2>
             <p className="text-lg text-gray-600 mb-8" data-aos="fade-up">
                 Donating winter clothing has never been easier! Follow these simple steps to contribute and make a difference in someone's life.
             </p>
