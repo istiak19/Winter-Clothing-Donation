@@ -6,7 +6,7 @@ const DonationCampaign = ({ clothe }) => {
     return (
         <div className="border-2 flex flex-col border-blue-300 rounded-lg p-3 space-y-5">
             <figure>
-                <img className="h-56 w-80 rounded-lg"
+                <img className="rounded-lg w-full h-56"
                     src={image}
                     alt="Donation" />
             </figure>

@@ -9,6 +9,7 @@ import Register from "../Components/Register";
 import PrivateProvider from "../providers/PrivateProvider";
 import Dashboard from "../Components/Dashboard";
 import Profile from "../Components/Profile";
+import HowToHelp from "../Components/HowToHelp";
 
 const routers = createBrowserRouter([
    {
@@ -50,6 +51,10 @@ const routers = createBrowserRouter([
          {
             path: '/update-profile',
             element: <PrivateProvider><Profile></Profile></PrivateProvider>
+         },
+         {
+            path:'/help',
+            element:<HowToHelp></HowToHelp>
          }
       ]
    }

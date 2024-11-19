@@ -56,7 +56,7 @@ const Register = () => {
     }
 
     return (
-        <div className="hero-content flex-col">
+        <div className="hero-content flex-col w-11/12 mx-auto">
             <div className="text-center lg:text-left">
                 <h1 className="text-3xl font-bold">Create an account</h1>
             </div>
