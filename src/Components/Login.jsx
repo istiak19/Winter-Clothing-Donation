@@ -1,12 +1,14 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
-
-    const { signInUser, signUpGoogle } = useContext(AuthContext)
+    const emailRef = useRef()
+    const { signInUser, signUpGoogle, passwordReset } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(true)
+    const [errorMsg, setErrorMsg] = useState('')
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -14,13 +16,47 @@ const Login = () => {
         const email = form.get('email')
         const password = form.get('password')
         console.log(email, password)
+        setErrorMsg('')
+
+        if (password.length < 6) {
+            setErrorMsg('Password must be at least 6 characters long.')
+            return;
+        }
+
+        if (!/[A-Z]/.test(password)) {
+            setErrorMsg('Password must contain at least one uppercase letter.')
+            return;
+        }
+
+        if (!/[a-z]/.test(password)) {
+            setErrorMsg('Password must contain at least one lowercase letter.')
+            return;
+        }
+
         signInUser(email, password)
             .then((result) => {
                 console.log(result.user)
             })
             .catch((error) => {
                 console.log(error.message)
+                setErrorMsg(error.message)
             })
+    }
+
+    const handleForgetPassword = () => {
+        const email = emailRef.current.value
+        if (!email) {
+            toast.warning('Please provide a valid email')
+        }
+        else {
+            passwordReset(email)
+                .then(() => {
+                    toast.info('Please reset email sent. please check your email')
+                })
+                .catch((error) => {
+                    setErrorMsg(error.message)
+                })
+        }
     }
 
     const handleGoogle = () => {
@@ -44,7 +80,7 @@ const Login = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" placeholder="Email" name="email" className="input input-bordered" required />
+                        <input type="email" placeholder="Email" name="email" ref={emailRef} className="input input-bordered" required />
                     </div>
                     <div className="form-control relative">
                         <label className="label">
@@ -52,7 +88,7 @@ const Login = () => {
                         </label>
                         <input type={showPassword ? 'password' : 'text'} name="password" placeholder="Password" className="input input-bordered" required />
                         <button onClick={() => setShowPassword(!showPassword)} className="absolute top-14 right-3">{showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}</button>
-                        <label className="label">
+                        <label onClick={handleForgetPassword} className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
                     </div>
@@ -60,6 +96,9 @@ const Login = () => {
                         <button className="btn bg-[#F59E0B] text-white font-bold">Login</button>
                     </div>
                     <p>Don't have an account? <Link to='/register' className="text-[#F59E0B] border-b border-orange-300">Register</Link></p>
+                    {
+                        errorMsg && <p>{errorMsg}</p>
+                    }
                 </form>
             </div>
             <div>

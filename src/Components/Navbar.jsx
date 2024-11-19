@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import logoPic from '../assets/logo3.png'
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import { FaRegUser } from "react-icons/fa";
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext)
@@ -19,7 +20,9 @@ const Navbar = () => {
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/campaigns'>Donation Campaigns</NavLink></li>
         <li><NavLink to='/help'>How to Help</NavLink></li>
-        <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+        {
+            user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+        }
     </>
 
     return (
@@ -55,11 +58,9 @@ const Navbar = () => {
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end gap-3">
                 {
-                    user && <p>
-                        {user?.email}
-                    </p>
+                    user ? <img className="w-12 h-12 rounded-full" src={user.photoURL} alt="" /> : <span className="text-3xl text-white"><FaRegUser></FaRegUser></span>
                 }
                 {
                     user ? <button onClick={handleSignOut} className="btn bg-[#1CABE2] border-2 text-white font-semibold">SignOut</button> : <Link to='/login' className="btn bg-[#1CABE2] border-2 text-white font-semibold">Login</Link>

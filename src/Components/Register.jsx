@@ -5,10 +5,11 @@ import { AuthContext } from "../providers/AuthProvider";
 
 const Register = () => {
 
+    const [errorMsg, setErrorMsg] = useState('')
     const [showPassword, setShowPassword] = useState(true)
     const { signUpUser, signUpGoogle, updateProfileUser } = useContext(AuthContext)
 
-    const handleLogin = (e) => {
+    const handleRegister = (e) => {
         e.preventDefault()
         const form = new FormData(e.target)
         const name = form.get('name')
@@ -16,6 +17,23 @@ const Register = () => {
         const email = form.get('email')
         const password = form.get('password')
         console.log(name, photo, email, password)
+        setErrorMsg('')
+
+        if (password.length < 6) {
+            setErrorMsg('Password must be at least 6 characters long.')
+            return;
+        }
+
+        if (!/[A-Z]/.test(password)) {
+            setErrorMsg('Password must contain at least one uppercase letter.')
+            return;
+        }
+
+        if (!/[a-z]/.test(password)) {
+            setErrorMsg('Password must contain at least one lowercase letter.')
+            return;
+        }
+
         signUpUser(email, password)
             .then((result) => {
                 console.log(result.user)
@@ -42,7 +60,7 @@ const Register = () => {
                 <h1 className="text-3xl font-bold">Create an account</h1>
             </div>
             <div className="card w-full max-w-md shrink-0 border-2">
-                <form onSubmit={handleLogin} className="card-body">
+                <form onSubmit={handleRegister} className="card-body">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Name</span>
@@ -72,6 +90,9 @@ const Register = () => {
                         <button className="btn bg-[#F59E0B] text-white font-bold">Register</button>
                     </div>
                     <p>Already have an account? <Link to='/login' className="text-[#F59E0B] border-b border-orange-300">Login</Link></p>
+                    {
+                        errorMsg && <p>{errorMsg}</p>
+                    }
                 </form>
             </div>
             <div>
