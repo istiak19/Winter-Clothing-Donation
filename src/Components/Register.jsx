@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Register = () => {
-
+    const navigate = useNavigate()
     const [errorMsg, setErrorMsg] = useState('')
     const [showPassword, setShowPassword] = useState(true)
     const { signUpUser, signUpGoogle, updateProfileUser } = useContext(AuthContext)
@@ -16,7 +16,6 @@ const Register = () => {
         const photo = form.get('photo')
         const email = form.get('email')
         const password = form.get('password')
-        console.log(name, photo, email, password)
         setErrorMsg('')
 
         if (password.length < 6) {
@@ -38,9 +37,10 @@ const Register = () => {
             .then((result) => {
                 console.log(result.user)
                 updateProfileUser({ displayName: name, photoURL: photo })
+                navigate('/')
             })
             .catch((error) => {
-                console.log(error.message)
+                setErrorMsg(error.message)
             })
     }
 
@@ -48,6 +48,7 @@ const Register = () => {
         signUpGoogle()
             .then((result) => {
                 console.log(result.user)
+                navigate('/')
             })
             .catch((error) => {
                 console.log(error.message)

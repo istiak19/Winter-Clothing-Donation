@@ -36,7 +36,6 @@ const UpdateProfile = () => {
                     placeholder="Name"
                     name="name"
                     className="mb-4 px-3 py-2 border rounded"
-                    required
                 />
                 <label className="mb-2 text-lg font-semibold">
                     Photo URL
@@ -46,7 +45,6 @@ const UpdateProfile = () => {
                     placeholder="Photo"
                     name="photo"
                     className="mb-4 px-3 py-2 border rounded"
-                    required
                 />
                 <button
                     className="px-4 py-2 text-white rounded-md bg-[#F59E0B]"

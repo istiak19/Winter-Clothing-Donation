@@ -1,11 +1,13 @@
 import { useContext, useRef, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
 
 const Login = () => {
     const emailRef = useRef()
+    const location = useLocation()
+    const navigate = useNavigate()
     const { signInUser, signUpGoogle, passwordReset } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(true)
     const [errorMsg, setErrorMsg] = useState('')
@@ -15,7 +17,6 @@ const Login = () => {
         const form = new FormData(e.target)
         const email = form.get('email')
         const password = form.get('password')
-        console.log(email, password)
         setErrorMsg('')
 
         if (password.length < 6) {
@@ -36,6 +37,8 @@ const Login = () => {
         signInUser(email, password)
             .then((result) => {
                 console.log(result.user)
+                navigate(location?.state ? location.state : '/')
+
             })
             .catch((error) => {
                 console.log(error.message)
@@ -63,6 +66,7 @@ const Login = () => {
         signUpGoogle()
             .then((result) => {
                 console.log(result.user)
+                navigate(location?.state ? location.state : '/')
             })
             .catch((error) => {
                 console.log(error.message)
