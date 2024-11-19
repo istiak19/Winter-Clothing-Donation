@@ -6,6 +6,9 @@ import DonationCampaigns from "../Components/DonationCampaigns";
 import DetailsPage from "../pages/DetailsPage";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
+import PrivateProvider from "../providers/PrivateProvider";
+import Dashboard from "../Components/Dashboard";
+import Profile from "../Components/Profile";
 
 const routers = createBrowserRouter([
    {
@@ -30,15 +33,23 @@ const routers = createBrowserRouter([
                const clothe = clothes.find(c => c.id == params.id)
                return clothe
             },
-            element: <DetailsPage></DetailsPage>
+            element: <PrivateProvider><DetailsPage></DetailsPage></PrivateProvider>
          },
          {
-            path:'/login',
-            element:<Login></Login>
+            path: '/dashboard',
+            element: <PrivateProvider><Dashboard></Dashboard></PrivateProvider>
          },
          {
-            path:'/register',
-            element:<Register></Register>
+            path: '/login',
+            element: <Login></Login>
+         },
+         {
+            path: '/register',
+            element: <Register></Register>
+         },
+         {
+            path: '/update-profile',
+            element: <PrivateProvider><Profile></Profile></PrivateProvider>
          }
       ]
    }
