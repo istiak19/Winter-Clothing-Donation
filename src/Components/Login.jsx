@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const emailRef = useRef()
@@ -75,6 +76,9 @@ const Login = () => {
 
     return (
         <div className="hero-content flex-col w-11/12 mx-auto">
+            <Helmet>
+                <title>Login - Winter Clothes Donation</title>
+            </Helmet>
             <div className="text-center lg:text-left">
                 <h1 className="text-3xl font-bold">Login now!</h1>
             </div>

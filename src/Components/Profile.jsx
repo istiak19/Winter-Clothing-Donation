@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const UpdateProfile = () => {
     const { updateProfileUser } = useContext(AuthContext);
@@ -24,6 +25,9 @@ const UpdateProfile = () => {
 
     return (
         <div className="max-w-lg mx-auto p-5 rounded-lg shadow-md mt-10 border border-[#F59E0B]">
+            <Helmet>
+                <title>Profile - Winter Clothes Donation</title>
+            </Helmet>
             <h1 className="text-2xl font-bold text-center mb-4">
                 Update Profile
             </h1>

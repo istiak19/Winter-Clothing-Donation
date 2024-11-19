@@ -1,17 +1,21 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Dashboard = () => {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleUpdateProfile = () => {
-        navigate('/update-profile'); 
+        navigate('/update-profile');
     };
 
     return (
         <div className="max-w-lg mx-auto p-10 border border-[#F59E0B] rounded-lg shadow-md mt-10">
+            <Helmet>
+                <title>Dashboard - Winter Clothes Donation</title>
+            </Helmet>
             <h1 className="text-3xl text-[#F59E0B] font-bold text-center mb-4">
                 Welcome, {user?.displayName}!
             </h1>

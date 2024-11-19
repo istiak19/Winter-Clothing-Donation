@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
     const navigate = useNavigate()
@@ -57,6 +58,9 @@ const Register = () => {
 
     return (
         <div className="hero-content flex-col w-11/12 mx-auto">
+            <Helmet>
+                <title>Register - Winter Clothes Donation</title>
+            </Helmet>
             <div className="text-center lg:text-left">
                 <h1 className="text-3xl font-bold">Create an account</h1>
             </div>

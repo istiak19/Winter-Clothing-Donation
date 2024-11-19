@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { FaTshirt, FaHandHoldingHeart, FaShareAlt, FaDonate } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -7,6 +8,10 @@ const HowToHelp = () => {
 
     return (
         <div className="py-10 px-5 md:px-16">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>HowToHelp - Winter Clothes Donation</title>
+            </Helmet>
             <h2 className="text-3xl font-bold text-center text-[#1CABE2] mb-8">How to Help</h2>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                 <div className="card shadow-md p-6 text-center border border-[#1CABE2]">
