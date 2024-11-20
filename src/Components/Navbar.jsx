@@ -17,11 +17,11 @@ const Navbar = () => {
             })
     }
     const links = <>
-        <li className="text-white"><NavLink to='/'>Home</NavLink></li>
-        <li className="text-white"><NavLink to='/campaigns'>Donation Campaigns</NavLink></li>
-        <li className="text-white"><NavLink to='/help'>How to Help</NavLink></li>
+        <li className="lg:text-white"><NavLink to='/'>Home</NavLink></li>
+        <li className="lg:text-white"><NavLink to='/campaigns'>Donation Campaigns</NavLink></li>
+        <li className="lg:text-white"><NavLink to='/help'>How to Help</NavLink></li>
         {
-            user && <li className="text-white"><NavLink to='/dashboard'>Dashboard</NavLink></li>
+            user && <li className="lg:text-white"><NavLink to='/dashboard'>Dashboard</NavLink></li>
         }
     </>
 
@@ -63,7 +63,7 @@ const Navbar = () => {
                     user ? <img className="w-12 h-12 rounded-full" src={user.photoURL} alt="" /> : <span className="text-3xl text-white"><FaRegUser></FaRegUser></span>
                 }
                 {
-                    user ? <button onClick={handleSignOut} className="btn bg-[#1CABE2] border-2 text-white font-semibold">SignOut</button> : <Link to='/login' className="btn bg-[#1CABE2] border-2 text-white font-semibold">Login</Link>
+                    user ? <button onClick={handleSignOut} className="btn bg-[#1CABE2] border-2 text-white font-semibold">Logout</button> : <Link to='/login' className="btn bg-[#1CABE2] border-2 text-white font-semibold">Login</Link>
                 }
             </div>
         </div>

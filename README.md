@@ -19,7 +19,7 @@ Winter Clothing Donation web application is a simple and user-friendly platform 
 * Donation campaigns page all campaigns show and donation now button click then show donation form.
 * Update profile option.
 * Toast show.
-* password no match show the error text.
+* Password no match show the error text.
 * Dynamic title.
 
 
