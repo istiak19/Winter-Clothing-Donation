@@ -17,11 +17,11 @@ const Navbar = () => {
             })
     }
     const links = <>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/campaigns'>Donation Campaigns</NavLink></li>
-        <li><NavLink to='/help'>How to Help</NavLink></li>
+        <li className="text-white"><NavLink to='/'>Home</NavLink></li>
+        <li className="text-white"><NavLink to='/campaigns'>Donation Campaigns</NavLink></li>
+        <li className="text-white"><NavLink to='/help'>How to Help</NavLink></li>
         {
-            user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+            user && <li className="text-white"><NavLink to='/dashboard'>Dashboard</NavLink></li>
         }
     </>
 

@@ -1,7 +1,15 @@
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const FAQ = () => {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, []);
+
     return (
         <div className="w-11/12 mx-auto my-12 flex flex-col gap-5">
-            <h2 className="text-3xl font-semibold mb-10 text-center">Frequently Asked <span className="text-[#F59E0B]">Questions</span></h2>
+            <h2 className="text-3xl font-semibold mb-10 text-center" data-aos="flip-left">Frequently Asked <span className="text-[#F59E0B]">Questions</span></h2>
             <div className="collapse collapse-arrow bg-base-200">
                 <input type="radio" name="my-accordion-2" defaultChecked />
                 <div className="collapse-title text-xl font-medium">How do I donate winter clothing?</div>
